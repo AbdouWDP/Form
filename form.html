@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/38bd4d5857.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <div
+      class="checkout-form w-1/2 flex flex-col items-center justify-center p-4"
+    >
+      <!-- Form - Start -->
+      <div class="full-form flex flex-col items-center justify-center">
+        <form
+          action=""
+          class="form w-full bg-white flex flex-col items-center justify-center gap-1"
+        >
+          <!-- Name and Phone - Start -->
+
+          <div class="name-number flex gap-1">
+            <div class="phone_number fields w-1/2">
+              <label class="label" for="phone">رقم الهاتف</label>
+              <input
+                type="number"
+                id="phone_input"
+                class="mt-0.5"
+                maxlength="10"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                dir="rtl"
+              />
+            </div>
+            <div class="full_name fields w-1/2">
+              <label for="name" class="label">الاسم الكامل</label>
+              <input type="text" id="name_input" class="mt-0.5" dir="rtl" />
+            </div>
+          </div>
+
+          <!-- Name and Phone - End -->
+
+          <!-- Selectors - Start -->
+
+          <div class="selectors flex gap-1">
+            <div class="commune_selector fields w-1/2">
+              <label for="commune" class="label">العنوان الكامل</label>
+              <select
+                name="commune"
+                id="select_commune"
+                class="mt-0.5"
+                dir="rtl"
+              >
+                <option value="">bab ezzouar</option>
+              </select>
+            </div>
+            <div class="wilaya_selector fields w-1/2">
+              <label for="wilaya" class="label">الولاية</label>
+              <select name="wilaya" id="select_wilaya" class="mt-0.5" dir="rtl">
+                <option value="">Alger</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Selectors - End -->
+
+          <!-- Livraison tarifs - Start -->
+
+          <div class="livraison_tarif fields flex gap-1">
+            <div class="liv-domicile livraison flex items-center gap-1 w-1/2">
+              <input type="checkbox" id="liv_domicile_checkbox" />
+              <p>Total Domicile: 5000</p>
+            </div>
+            <div class="liv-bureau livraison flex items-center gap-1 w-1/2">
+              <input type="checkbox" id="liv_bureau_checkbox" />
+              <p>Total Bureau: 5000</p>
+            </div>
+          </div>
+
+          <!-- Livraison tarifs - End -->
+
+          <!-- Quantity - Start -->
+
+          <div class="quantity-submit flex w-full gap-2">
+            <input
+              type="submit"
+              id="submit"
+              value="أنقر هنا لتأكيد الطلب"
+              class="bg-green-700 text-white font-semibold hover:bg-green-600"
+            />
+            <div
+              class="quantity w-full h-full text-white flex justify-between items-center"
+            >
+              <button class="sub_quantity h-full text-black">
+                <span><i class="fa-solid fa-minus"></i></span>
+              </button>
+              <div class="quantity_number text-xl text-semibold text-black">
+                1
+              </div>
+              <button class="add_quantity h-full text-black">
+                <span id="add" class="h-full w-full"
+                  ><i class="fa-solid fa-plus"></i
+                ></span>
+              </button>
+            </div>
+          </div>
+          <!-- Quantity - End -->
+        </form>
+        <div class="order-summary">
+          <div class="summary flex justify-between items-center rounded">
+            <div class="arrow px-4 text-lg">
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="summary-title px-4 font-semibold">
+              <span>ملخص الطلب</span>
+              <span class="cart-shopping"
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></span>
+            </div>
+          </div>
+          <div class="order-details">
+            <div
+              style="
+                width: 100%;
+                height: 50px;
+                border-bottom: 2px solid #3232325a;
+              "
+              class="flex flex-col"
+            >
+              <div class="details-row px-4" dir="rtl">
+                <h3 class="product-title">منتج 1</h3>
+                <h3>1600 دج</h3>
+              </div>
+            </div>
+            <div
+              style="
+                width: 100%;
+                height: 50px;
+                border-bottom: 1px solid #3232325a;
+              "
+              class="flex flex-col"
+            >
+              <div class="details-row px-4" dir="rtl">
+                <h3>سعر التوصيل</h3>
+                <h3>800 دج</h3>
+              </div>
+            </div>
+            <div style="width: 100%; height: 50px" class="flex flex-col">
+              <div class="details-row px-4" dir="rtl">
+                <h3>السعر الكلي</h3>
+                <h3>2400 دج</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Form - End -->
+    </div>
+
+    <script src="form.js"></script>
+  </body>
+</html>
